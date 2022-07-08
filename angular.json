@@ -1,0 +1,8 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "currency-converter": "apps/currency-converter",
+    "currency-converter-e2e": "apps/currency-converter-e2e"
+  }
+}
