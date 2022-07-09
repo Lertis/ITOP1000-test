@@ -1,1 +1,4 @@
-<currency-nx-welcome></currency-nx-welcome>
+<div class="main-wrapper">
+  <currency-converter-header [currencyValues]="currencyValues" (bankSelected)="bankSelected($event)"></currency-converter-header>
+  <currency-converter-main [currencyValues]="currencyValues"></currency-converter-main>
+</div>

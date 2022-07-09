@@ -1,0 +1,48 @@
+<ng-container *ngIf="isLoading$ | async; then valuesLoadingTmp; else valuesPresentTmp">
+</ng-container>
+<ng-template #valuesLoadingTmp>
+  <div class="spinner-wrapper">
+    <shared-spinner [diameter]="70"></shared-spinner>
+  </div>
+</ng-template>
+
+<ng-template #valuesPresentTmp>
+  <div class="usage-info-block">
+    <span class="text-info">
+      <ul>
+        <li>Select the bank from above whose exchange rate you want to use for conversion</li>
+        <li>Select the currency type and enter the value in the corresponding field</li>
+      </ul>
+    </span>
+  </div>
+
+  <form [formGroup]="changeForm" class="change-form">
+    <div class="left-side">
+      <mat-form-field appearance="outline">
+        <input type="number" matInput formControlName="leftCurrencyValue" placeholder="Insert value" required>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Currency</mat-label>
+        <mat-select formControlName="leftCurrencyType">
+          <ng-container *ngFor="let item of leftCurrencyList">
+            <mat-option [value]="item.key">{{ item.value }}</mat-option>
+          </ng-container>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="right-side">
+      <mat-form-field appearance="outline">
+        <input type="number" matInput formControlName="rightCurrencyValue" placeholder="Insert value" required>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Currency</mat-label>
+        <mat-select formControlName="rightCurrencyType">
+          <ng-container *ngFor="let item of rightCurrencyList">
+            <mat-option [value]="item.key">{{ item.value }}</mat-option>
+          </ng-container>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </form>
+</ng-template>

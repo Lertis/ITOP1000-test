@@ -1,0 +1,55 @@
+:host {
+  height: 100%;
+  background: #F2D7D9;
+}
+
+:host ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+  stroke: #9cb4cc;
+}
+
+.change-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 10px 150px;
+  align-items: center;
+  background: inherit;
+  .left-side,
+  .right-side {
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    border: 1px dashed #9cb4cc;
+    border-radius: 10px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .change-form {
+    flex-direction: column;
+    gap: 2em;
+  }
+}
+
+.usage-info-block {
+  display: flex;
+  justify-content: center;
+  padding: 2em;
+  background: inherit;
+  .text-info {
+    border: 1px solid #9cb4cc;
+    padding: 1em;
+    border-radius: 10px;
+    li {
+      list-style-type: circle;
+    }
+  }
+}
+
+.spinner-wrapper {
+  display: grid;
+  place-items: center;
+  padding: 20px 0;
+}

@@ -1,3 +1,5 @@
-export const environment = {
-  production: true,
+import { IEnvironment } from '../app/model'
+
+export const environment: IEnvironment = {
+  production: true
 };

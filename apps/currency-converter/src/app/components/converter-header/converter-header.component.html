@@ -1,0 +1,32 @@
+<div class="currency-header">
+  <div class="icon-part">
+    <img src="assets/icons/exchange.png" alt="icon">
+  </div>
+
+  <div class="currency-info-part">
+    <ng-container *ngIf="isLoading$ | async; then valuesLoadingTmp; else valuesPresentTmp">
+    </ng-container>
+
+    <ng-template #valuesLoadingTmp>
+      <shared-spinner [diameter]="70"></shared-spinner>
+    </ng-template>
+
+    <ng-template #valuesPresentTmp>
+      <ng-container *ngFor="let curr of currencyValues">
+        <div>{{ curr.currencyName }}: {{ curr.saleRate | number: '2.0-3' }} / {{ curr.purchaseRate | number: '2.0-3'}}
+        </div>
+      </ng-container>
+    </ng-template>
+  </div>
+
+  <div class="bank-ddl-part">
+    <mat-form-field appearance="outline">
+      <mat-label>Bank</mat-label>
+      <mat-select [formControl]="bank">
+        <ng-container *ngFor="let item of banksList">
+          <mat-option [value]="item.key">{{ item.value }}</mat-option>
+        </ng-container>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>

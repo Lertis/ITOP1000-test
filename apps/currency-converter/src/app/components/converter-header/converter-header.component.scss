@@ -1,0 +1,20 @@
+:host ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+  stroke: #f2d7d9;
+}
+
+.currency-header {
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
+  background: #9cb4cc;
+  height: 100px;
+  .currency-info-part {
+    font-size: larger;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
